@@ -60,7 +60,7 @@ export const updateUserById=async(req,res)=>{
         const {id}=req.params;
         const {firstName,middleName,lastName,email,age}=req.body;
         const user=await User.findById(id);
-        if(!user)res.json({"message":"the user was not found"});
+
         if(firstName) user.firstName=firstName;
         if(middleName) user.middleName=middleName;
         if(lastName) user.lastName=lastName;
